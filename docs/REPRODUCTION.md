@@ -62,8 +62,19 @@ This path requires the frozen intermediate artifact package:
 pairuav_lastmeter_frozen_artifacts.zip
 ```
 
-After downloading it from the project file mirror, unpack it into any directory,
-for example:
+The easiest way to obtain it is to download the complete release bundle:
+
+- Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
+- Extraction code: `t2c6`
+- Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
+- Bundle SHA-256:
+
+```text
+4680537d47c93f6b953d20fde6e55b260e4603f02743b06f6ad6900ec0ef729f
+```
+
+After downloading the bundle, unpack `pairuav_lastmeter_frozen_artifacts.zip`
+into any directory, for example:
 
 ```text
 /path/to/frozen_artifacts/

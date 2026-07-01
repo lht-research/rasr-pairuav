@@ -53,21 +53,6 @@ angle_rel_error      0.003350
 
 See `docs/REPRODUCTION.md` for the full two-path protocol.
 
-## Artifact Download
-
-The complete release bundle contains the source package, frozen row-aligned
-prediction CSVs for exact reproduction, checksum file, and archived submit
-package.
-
-- Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
-- Extraction code: `t2c6`
-- Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
-- Bundle SHA-256:
-
-```text
-4680537d47c93f6b953d20fde6e55b260e4603f02743b06f6ad6900ec0ef729f
-```
-
 ## Method Summary
 
 The scale-recovery core starts from dense pairwise geometry extracted by a
@@ -174,9 +159,22 @@ use Path B for the exact archived score.
 
 ## Path B: Exact Frozen-Artifact Reproduction
 
-Download `pairuav_lastmeter_frozen_artifacts.zip` from the project file mirror
-and unpack it. The unpacked directory must contain four distance-head prediction
-CSVs and one heading CSV:
+Path B is the only path that requires the external artifact bundle. The bundle
+contains the source package, frozen row-aligned prediction CSVs for exact
+reproduction, checksum file, and archived submit package.
+
+- Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
+- Extraction code: `t2c6`
+- Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
+- Bundle SHA-256:
+
+```text
+4680537d47c93f6b953d20fde6e55b260e4603f02743b06f6ad6900ec0ef729f
+```
+
+Unpack `pairuav_lastmeter_frozen_artifacts.zip` from the complete bundle. The
+unpacked directory must contain four distance-head prediction CSVs and one
+heading CSV:
 
 ```text
 /path/to/frozen_artifacts/
