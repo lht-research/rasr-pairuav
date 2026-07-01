@@ -1,6 +1,19 @@
+<div align="center">
+
 # RASR: Range-Aware Scale Recovery for PairUAV
 
-[中文介绍](docs/README_zh.md)
+**Frozen pair geometry, range-aware scale recovery, and reproducible PairUAV submission artifacts.**
+
+[中文介绍](docs/README_zh.md) · [Reproduction](docs/REPRODUCTION.md) · [Method](docs/METHOD.md) · [Compliance](compliance/COMPLIANCE.md)
+
+![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
+![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
+![Task](https://img.shields.io/badge/Task-PairUAV-blue?style=flat-square)
+![Reproducibility](https://img.shields.io/badge/Reproduction-Exact%20%2B%20From--Scratch-orange?style=flat-square)
+
+<img src="docs/assets/pipeline.png" alt="RASR pipeline overview" width="92%">
+
+</div>
 
 This repository contains the public implementation for **RASR
 (Range-Aware Scale Recovery)**, the frozen per-pair system described in
@@ -47,11 +60,11 @@ The exact frozen-artifact path reproduces this `submit.zip` SHA-256:
 
 The corresponding online PairUAV result is:
 
-```text
-final_score          0.003189
-distance_rel_error   0.003029
-angle_rel_error      0.003350
-```
+| Metric | Value |
+| --- | ---: |
+| `final_score` | `0.003189` |
+| `distance_rel_error` | `0.003029` |
+| `angle_rel_error` | `0.003350` |
 
 See `docs/REPRODUCTION.md` for the full two-path protocol.
 
@@ -93,6 +106,10 @@ wrap_180(20 * round((1.014 * phi + 1.2) / 20))
 
 Self-pair rows are detected from identifiers in the same row and set to zero
 heading and zero distance for that row only.
+
+<p align="center">
+  <img src="docs/assets/range_calibration.png" alt="Range-dependent calibration diagnostic" width="58%">
+</p>
 
 ## Data
 
