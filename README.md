@@ -53,6 +53,21 @@ angle_rel_error      0.003350
 
 See `docs/REPRODUCTION.md` for the full two-path protocol.
 
+## Artifact Download
+
+The complete release bundle contains the source package, frozen row-aligned
+prediction CSVs for exact reproduction, checksum file, and archived submit
+package.
+
+- Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
+- Extraction code: `t2c6`
+- Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
+- Bundle SHA-256:
+
+```text
+4680537d47c93f6b953d20fde6e55b260e4603f02743b06f6ad6900ec0ef729f
+```
+
 ## Method Summary
 
 The scale-recovery core starts from dense pairwise geometry extracted by a
