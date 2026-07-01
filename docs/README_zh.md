@@ -1,36 +1,43 @@
 # RASR：面向 PairUAV 的距离感知尺度恢复
 
-这是 RASR（Range-Aware Scale Recovery）的公开实现。RASR 对应论文
-`Range-Aware Scale Recovery for Monocular Metric Grounding`，用于 PairUAV
-最后一米相对位姿估计任务。
+[English README](../README.md)
 
-PairUAV 的输入是一对有顺序的图像，输出是让无人机从当前视角移动到目标视角的
-航向角和距离命令。论文把这个问题视为 monocular metric grounding：冻结的成对
-几何模型已经提供了两张图像之间的相对结构，主要瓶颈是如何在相对误差指标下恢复
-正确的米制尺度。
+这是 **RASR（Range-Aware Scale Recovery）** 的公开实现。RASR 是论文
+`Range-Aware Scale Recovery for Monocular Metric Grounding` 中描述的冻结、逐对
+图像系统。
 
-## 方法边界
+论文将 PairUAV 表述为最后一米相对位姿估计中的 monocular metric grounding：给定
+一对有顺序的图像，预测让智能体移动到目标视角的航向角和距离命令。冻结的成对几何
+已经包含两张图像之间的相对结构；主要瓶颈是在相对误差目标下恢复正确的米制尺度。
 
 RASR 明确区分两部分：
 
 - **尺度恢复核心（scale-recovery core）**：冻结成对几何、422 维无元数据描述子、
   全局与距离感知校准、四个冻结距离候选，以及逐行凸组合。
-- **PairUAV 榜单专用输出头（benchmark-specific output head）**：距离分桶、输出
-  snapping、以及针对 PairUAV 标签和评分规则调出的常数。该部分用于复现榜单提交，
-  不声明可直接迁移。
+- **PairUAV 榜单专用输出头（PairUAV benchmark-specific output head）**：距离
+  分桶、输出 snapping，以及针对归档榜单提交使用的数据集调参常数。该输出头随代码
+  发布以便复现，但不声明可直接迁移。
 
-正式推理时，每一行预测只依赖这一对图像和固定参数。发布路径不使用测试集图优化、
-batch 排序、隐藏邻居修正、测试集检索、全局分配、聚类或跨样本 bookkeeping。
+每个正式预测都是一个有序图像对和固定参数的函数。发布路径不使用测试集图优化、
+batch 排序、隐藏邻居修正、隐藏测试集检索、全局分配、聚类或跨样本 bookkeeping。
 
-## 在线结果
+## 复现路径
 
-精确复现路径对应的 `submit.zip` SHA-256 为：
+本仓库支持两条路径：
+
+- **Path A，公开从头复现路径**：从官方数据构建 pair table，提取 pair feature，训练
+  公开距离头和一个简单公开 heading baseline，执行推理，并打包一个合法的 PairUAV
+  提交。这一路径用于透明端到端执行和独立实验；不期望逐 bit 复现归档线上分数。
+- **Path B，精确冻结 artifact 路径**：下载冻结中间 CSV 包，先校验，再逐 bit 复现
+  归档最终提交。当你需要论文中报告的精确线上结果时，使用这一路径。
+
+精确冻结 artifact 路径复现的 `submit.zip` SHA-256 为：
 
 ```text
 2f742f2eff83e535b96a8dbd46db370fa3ac0538a9f3e53b684d65c253b34b77
 ```
 
-对应线上结果：
+对应的 PairUAV 线上结果为：
 
 ```text
 final_score          0.003189
@@ -38,12 +45,68 @@ distance_rel_error   0.003029
 angle_rel_error      0.003350
 ```
 
-## 两条复现路径
+完整两路径协议见 `docs/REPRODUCTION.md`。
 
-### Path A：从官方数据公开复现
+## 方法摘要
 
-这一路径从官方 PairUAV 数据开始，构建 pair table、提取 pair feature、训练公开距离
-头和一个简单公开 heading baseline，最后生成合法的 `submit.zip`。
+尺度恢复核心从冻结 MASt3R-style ViT-L/16 metric checkpoint 提取的密集成对几何开始。
+两张图像都被 resize 到 512 像素，并在两个方向上进行对称 pair inference。point maps、
+cross-view point maps、confidence maps 和 descriptor maps 被归约为每个图像对一个
+422 维无元数据描述子。
+
+四个冻结距离头产生具有互补距离段行为的候选结果：
+
+- `distance_head_a`
+- `distance_head_b`
+- `distance_head_c`
+- `distance_head_d`
+
+尺度代理 `|h_1(z_i)|` 在发布配置中实现为 `gate=head0`，用于把每个图像对分配到
+7 个距离 bucket 之一。bucket 的 calibration-side cut points 为：
+
+```text
+5.596117113284452, 14.189340747346009, 33.73144867309181, 53.75,
+77.38132781381124, 114.79
+```
+
+在每个 bucket 内，四个候选结果由固定凸权重组合。这些权重通过 SLSQP 在距离相对误差
+目标下拟合。四个候选结果的标准差被保留为 disagreement statistic。
+
+PairUAV 榜单专用输出头随后使用 `models/lastmeter_config.json` 中的固定
+bucket/sign/std-segment affine correction 和 2.5 m snap。heading 使用冻结 heading
+source，并接上论文中的固定变换：
+
+```text
+wrap_180(20 * round((1.014 * phi + 1.2) / 20))
+```
+
+self-pair 行通过同一行中的标识符检测，并只对该行设置为零 heading 和零 distance。
+
+## 数据
+
+本仓库不分发数据集图像或标签。请从官方来源获取：
+
+- University-1652：官方 University-1652 项目页面。
+- PairUAV train/test data：官方 benchmark release。
+
+期望的本地目录结构见 `data_processing/01_request_and_layout.md`。
+
+## 环境
+
+```bash
+conda env create -f environment.yml
+conda activate pairuav-lastmeter
+```
+
+轻量 smoke test 会检查 stacker、circular heading utilities 和 self-pair handling：
+
+```bash
+bash scripts/smoke_test.sh
+```
+
+## Path A：公开从头复现路径
+
+公开 from-scratch 脚本串联完整透明流程：
 
 ```bash
 bash scripts/reproduce_from_scratch.sh \
@@ -54,24 +117,48 @@ bash scripts/reproduce_from_scratch.sh \
   --max-steps 50
 ```
 
-这一路径用于透明地跑通端到端流程和独立实验，不承诺得到与线上归档提交完全一致的
-hash 或分数。
+完整 production-quality feature extraction 可能需要数天，具体取决于 GPU 数量和存储带宽。
+如果使用 production features，请传入 `--feature-mode production`、`--runtime-root` 和
+`--model-path`：
 
-### Path B：下载冻结中间结果精确复现
+```bash
+bash scripts/reproduce_from_scratch.sh \
+  --data-root /path/to/pairuav-data \
+  --output-dir outputs/from_scratch_production \
+  --feature-mode production \
+  --runtime-root /path/to/mast3r_probe_runtime \
+  --model-path /path/to/MASt3R_ViTLarge_BaseDecoder_512_catmlpdpt_metric \
+  --device cuda:0
+```
 
-这是唯一需要外部 artifact bundle 的路径。bundle 中包含源码包、用于精确复现的
-冻结逐行预测 CSV、校验和文件，以及归档 submit 包。
+`data_processing/03_extract_features.py` 有两种模式：
+
+- `--mode smoke`：用于快速本地流程检查的确定性图像统计特征。
+- `--mode production`：与发布 checkpoint contract 匹配的冻结视觉 pair features。它
+  需要冻结视觉 runtime 和 model path，并支持 sharding、limit 和 resume。
+
+production extractor 默认使用严格逐 pair forward pass。只有在以速度为主、可接受微小
+数值漂移的实验中，才使用 `--batched-pair-forward`。
+
+公开 from-scratch 路径从 pair features 训练一个简单的逐行 sin/cos heading baseline。
+它用于公开完整工作流；如果需要精确归档分数，请使用 Path B。
+
+## Path B：精确冻结 Artifact 复现
+
+Path B 是唯一需要外部 artifact bundle 的路径。bundle 包含源码包、用于精确复现的
+冻结逐行预测 CSV、checksum file 和归档 submit package。
 
 - 百度网盘：https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
 - 提取码：`t2c6`
-- 文件名：`pairuav_lastmeter_complete_release_bundle.zip`
-- bundle SHA-256：
+- Bundle 文件：`pairuav_lastmeter_complete_release_bundle.zip`
+- Bundle SHA-256：
 
 ```text
 4680537d47c93f6b953d20fde6e55b260e4603f02743b06f6ad6900ec0ef729f
 ```
 
-下载后，从完整 bundle 中解出 `pairuav_lastmeter_frozen_artifacts.zip`，再解压得到：
+从完整 bundle 中解出 `pairuav_lastmeter_frozen_artifacts.zip`。解压后的目录必须包含
+四个距离头预测 CSV 和一个 heading CSV：
 
 ```text
 /path/to/frozen_artifacts/
@@ -82,7 +169,11 @@ hash 或分数。
 └── heading_predictions.csv
 ```
 
-先校验 artifact：
+每个距离 CSV 必须包含 `range_pred`；heading CSV 必须包含 `heading_pred`。如果存在
+`manifest_index`、`scene_id`、`pair_id`、`image_a`、`image_b` 等 metadata columns，
+脚本会检查四个 head 之间的对齐，并用这些字段进行逐行 self-pair handling。
+
+先校验下载的 artifacts：
 
 ```bash
 python scripts/verify_frozen_artifacts.py \
@@ -90,7 +181,7 @@ python scripts/verify_frozen_artifacts.py \
   --manifest frozen_artifacts_manifest.json
 ```
 
-再复现归档提交：
+运行精确复现：
 
 ```bash
 bash scripts/reproduce_from_models.sh \
@@ -99,20 +190,95 @@ bash scripts/reproduce_from_models.sh \
   --output-dir outputs/exact
 ```
 
-成功后应得到：
+预期输出为：
 
 ```text
 outputs/exact/submit.zip
 ```
 
-其 SHA-256 应为：
+预期 SHA-256 为：
 
 ```text
 2f742f2eff83e535b96a8dbd46db370fa3ac0538a9f3e53b684d65c253b34b77
 ```
 
-更多细节见英文文档：
+完整验证会检查 row count、self-pair zeroing、zip root contents 和期望 archive hash。
+精确 hash 由五个冻结、逐行对齐的 prediction CSV 锚定。
 
-- `README.md`
-- `docs/REPRODUCTION.md`
-- `docs/METHOD.md`
+## 从冻结 Pair Features 重新计算距离头
+
+如果你有与发布 checkpoints 兼容的 422 维 pair feature cache，released-model 脚本可以先
+重新计算四个距离头 CSV，然后再应用同一个 PairUAV output head：
+
+```bash
+bash scripts/reproduce_from_models.sh \
+  --data-root /path/to/pairuav-data \
+  --feature-root /path/to/features \
+  --pair-feature-csv /path/to/pair_features.csv \
+  --heading-csv /path/to/heading_predictions.csv \
+  --output-dir outputs/released-models
+```
+
+对于 sharded caches，可使用 `--pair-feature-glob 'features/shard_*.csv'` 或
+`--pair-feature-dir features/`。默认情况下，checkpoint inference 使用归档导出时的
+per-head batch sizes；只有在可接受微小 runtime-dependent numeric drift 的实验中，才传入
+`--no-legacy-batch-policy`。
+
+小规模检查命令：
+
+```bash
+bash scripts/reproduce_from_models.sh \
+  --data-root /path/to/pairuav-data \
+  --feature-root /path/to/frozen_artifacts \
+  --output-dir outputs/smoke \
+  --limit 4096
+```
+
+## 验证命令
+
+从对齐的 heading 和 distance CSV 打包：
+
+```bash
+python inference/package.py from-csv \
+  --heading-csv /path/to/heading_predictions.csv \
+  --distance-csv /path/to/distance_col.csv \
+  --output-dir outputs/package
+```
+
+验证 result archive：
+
+```bash
+python scripts/verify_result.py \
+  --result-zip outputs/package/result.zip
+```
+
+验证 feature CSV 是否匹配发布 checkpoint schema，也可选地对照冻结 reference cache：
+
+```bash
+python scripts/verify_features.py \
+  --feature-csv outputs/features/pair_features.csv \
+  --reference-csv /path/to/frozen_pair_features.csv \
+  --checkpoint models/distance_head_a.pt \
+  --limit 4096 \
+  --atol 1e-5
+```
+
+## 仓库结构
+
+```text
+pairuav_lastmeter/
+├── compliance/
+├── configs/
+├── data_processing/
+├── docs/
+├── inference/
+├── models/
+├── models_src/
+└── scripts/
+```
+
+## 合规说明
+
+推理是逐 pair 的。距离头和 output-head 阶段一次处理一个有序图像对，只使用该行的
+预测结果和固定的 train/calibration-derived 参数。更多细节见 `compliance/COMPLIANCE.md`
+和 `docs/HEADING_PROVENANCE.md`。
