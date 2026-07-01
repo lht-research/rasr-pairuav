@@ -1,5 +1,7 @@
 # RASR: Range-Aware Scale Recovery for PairUAV
 
+[中文介绍](docs/README_zh.md)
+
 This repository contains the public implementation for **RASR
 (Range-Aware Scale Recovery)**, the frozen per-pair system described in
 `Range-Aware Scale Recovery for Monocular Metric Grounding`.
