@@ -1,0 +1,17 @@
+name: pairuav-lastmeter
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy
+  - pandas
+  - pillow
+  - pyyaml
+  - scikit-learn
+  - scipy
+  - tqdm
+  - pip:
+      - -r requirements.txt

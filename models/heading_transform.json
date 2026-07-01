@@ -1,0 +1,24 @@
+{
+  "name": "v8dist_more_heading_narrowsnap20_off+0.00_scale1.014_bias+1.2",
+  "scale": 1.0139999999999996,
+  "bias": 1.2000000000000002,
+  "snap_step": 20.0,
+  "snap_offset": 0.0,
+  "wrap": true,
+  "eval_metrics": {
+    "angle_rel_error": 0.004861153686057813,
+    "heading_mae_deg": 0.30300962260287995,
+    "valid_rows": 14653
+  },
+  "fit_metrics": {
+    "angle_rel_error": 0.00428119268365904,
+    "heading_mae_deg": 0.17172278401303848,
+    "valid_rows": 26997
+  },
+  "est_online_angle": 0.003269889673275589,
+  "est_online_final_with_current_distance": 0.003838902076137795,
+  "rank": 1,
+  "model_type": "rasr_pairuav_heading_output_transform",
+  "method_contract": "per-pair transform of the frozen heading_pred column in the PairUAV benchmark-specific output head",
+  "expected_submit_zip_sha256": "2f742f2eff83e535b96a8dbd46db370fa3ac0538a9f3e53b684d65c253b34b77"
+}

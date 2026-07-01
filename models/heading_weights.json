@@ -1,0 +1,21 @@
+{
+  "model_type": "frozen_heading_column",
+  "description": "Exact RASR reproduction uses the archived frozen heading prediction column. The column is the phi_i source consumed by the PairUAV benchmark-specific output head.",
+  "default_filename": "heading_predictions.csv",
+  "column": "heading_pred",
+  "rows": 2773116,
+  "source_file_sha256": "78da3c9ab6f6635ba19a0ad86cc7446e53d12fa5cbf59208efa2848b44f7f30b",
+  "source_column_sha256": "382c356bb0d02464d234345d43fcde11cea2d0f792cf3304a1d23e3336df97ae",
+  "source_column_sha256_format": "heading_pred formatted as %.6f with LF line endings and no header",
+  "provenance": {
+    "unit": "one official row / one image pair",
+    "upstream_prediction_type": "per-row heading predictions in degrees",
+    "combiner": "fixed circular weighted average over per-row heading predictions",
+    "combiner_implementation": "models_src/heading_ensemble.py",
+    "uses_test_labels": false,
+    "uses_test_graph": false,
+    "uses_cross_test_sample_relationships": false,
+    "uses_global_assignment_or_clustering": false,
+    "packager_contract": "heading_predictions.csv contains one heading_pred value per row, aligned with distance rows"
+  }
+}

@@ -1,0 +1,19 @@
+dataset:
+  university1652_root: "${DATA_ROOT}/University-1652"
+  pairuav_root: "${DATA_ROOT}/PairUAV"
+  official_test_root: "${DATA_ROOT}/PairUAV/test"
+
+outputs:
+  work_dir: "outputs/work"
+  feature_dir: "outputs/features"
+  submission_dir: "outputs/submission"
+
+splits:
+  train_heads_name: "train_heads"
+  train_calib_name: "train_calib"
+  scene_disjoint: true
+  seed: 2026
+
+distance_buckets:
+  # Final bucket boundaries are filled during stacker release verification.
+  boundaries_meters: []

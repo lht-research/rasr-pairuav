@@ -1,0 +1,46 @@
+{
+  "name": "pairuav_lastmeter_frozen_artifacts",
+  "description": "Frozen row-aligned prediction CSV files required for bit-exact reproduction of the archived RASR PairUAV submission.",
+  "expected_submit_zip_sha256": "2f742f2eff83e535b96a8dbd46db370fa3ac0538a9f3e53b684d65c253b34b77",
+  "expected_result_txt_sha256": "44b3be45f88893d58a17a8585147f31534d81992b7aa1f8a00006affa57946e8",
+  "expected_rows": 2773116,
+  "expected_selfpair_zeroed_rows": 51354,
+  "files": [
+    {
+      "path": "distance_head_a.csv",
+      "bytes": 221939325,
+      "sha256": "d0362d7621e15154a1f77b9f71ced21b164f1809d28244d5732b0f816ab67f3f",
+      "required_columns": ["range_pred"]
+    },
+    {
+      "path": "distance_head_b.csv",
+      "bytes": 221939214,
+      "sha256": "82f6e5e44a541cccc763b0307a33f68baaf3d49ec5a356a42a7dc050c3906c18",
+      "required_columns": ["range_pred"]
+    },
+    {
+      "path": "distance_head_c.csv",
+      "bytes": 221930066,
+      "sha256": "054c3ad5ef1373a53502ad7c8872dc94fb00bb352959a0d28e1f3eaac3b5795c",
+      "required_columns": ["range_pred"]
+    },
+    {
+      "path": "distance_head_d.csv",
+      "bytes": 221973679,
+      "sha256": "c06ac0f045f1621d63cb68433c17108f0c151293e6d6cb391c3738644b478989",
+      "required_columns": ["range_pred"]
+    },
+    {
+      "path": "heading_predictions.csv",
+      "bytes": 32855171,
+      "sha256": "78da3c9ab6f6635ba19a0ad86cc7446e53d12fa5cbf59208efa2848b44f7f30b",
+      "column_sha256_decimal6_lf": "382c356bb0d02464d234345d43fcde11cea2d0f792cf3304a1d23e3336df97ae",
+      "required_columns": ["heading_pred"]
+    }
+  ],
+  "suggested_archive": {
+    "filename": "pairuav_lastmeter_frozen_artifacts.zip",
+    "bytes": 376044781,
+    "sha256": "f48c1463e8c69a2f63b710c570ebcea8c1c5b60b2cb1db873a20cd8c351fa64f"
+  }
+}

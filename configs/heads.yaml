@@ -1,0 +1,38 @@
+feature_dim: 422
+hidden_dim: 256
+dropout: 0.10
+batch_size: 256
+num_workers: 8
+learning_rate: 0.0003
+weight_decay: 0.0001
+max_epochs: 30
+loss: "smooth_l1"
+target_column: "range_num"
+metadata_columns:
+  - "manifest_index"
+  - "scene_id"
+  - "pair_id"
+  - "json_rel_path"
+  - "image_a"
+  - "image_b"
+  - "heading_num"
+  - "range_num"
+  - "range_true"
+  - "heading_true"
+  - "is_valid"
+  - "failure_reason"
+  - "pair_wall_seconds"
+
+heads:
+  distance_head_a:
+    seed: 51
+    target: "distance"
+  distance_head_b:
+    seed: 52
+    target: "distance"
+  distance_head_c:
+    seed: 51
+    target: "distance"
+  distance_head_d:
+    seed: 51
+    target: "distance"
