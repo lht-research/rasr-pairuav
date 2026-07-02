@@ -10,8 +10,6 @@ configuration used by the archived RASR submission.
 - `heading_transform.json`: fixed heading scale, bias, 20 degree snap, and wrap.
 - `heading_transform_identity.json`: identity transform used by the public
   from-scratch heading baseline.
-- `per_bucket_weights.json`: retained earlier stacker configuration for audit;
-  exact reproduction uses `lastmeter_config.json`.
 
 Expected exact `submit.zip` SHA-256:
 
