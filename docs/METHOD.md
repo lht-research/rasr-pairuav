@@ -1,5 +1,7 @@
 # Method
 
+[中文版本](METHOD_zh.md)
+
 This document follows the terminology used in the paper:
 
 - **RASR:** Range-Aware Scale Recovery.

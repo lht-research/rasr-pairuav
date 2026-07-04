@@ -1,5 +1,7 @@
 # Compliance Statement
 
+[中文版本](COMPLIANCE_zh.md)
+
 This repository is organized so reviewers can verify that inference is a
 per-pair function, matching the contract stated in the paper.
 

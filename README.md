@@ -68,6 +68,20 @@ The corresponding online PairUAV result is:
 
 See `docs/REPRODUCTION.md` for the full two-path protocol.
 
+## Documentation
+
+| Topic | English | Chinese |
+| --- | --- | --- |
+| Project overview | [README.md](README.md) | [docs/README_zh.md](docs/README_zh.md) |
+| Reproduction protocol | [docs/REPRODUCTION.md](docs/REPRODUCTION.md) | [docs/REPRODUCTION_zh.md](docs/REPRODUCTION_zh.md) |
+| Method | [docs/METHOD.md](docs/METHOD.md) | [docs/METHOD_zh.md](docs/METHOD_zh.md) |
+| Archived implementation | [docs/METHOD_RELEASE.md](docs/METHOD_RELEASE.md) | [docs/METHOD_RELEASE_zh.md](docs/METHOD_RELEASE_zh.md) |
+| Heading provenance | [docs/HEADING_PROVENANCE.md](docs/HEADING_PROVENANCE.md) | [docs/HEADING_PROVENANCE_zh.md](docs/HEADING_PROVENANCE_zh.md) |
+| Compliance | [compliance/COMPLIANCE.md](compliance/COMPLIANCE.md) | [compliance/COMPLIANCE_zh.md](compliance/COMPLIANCE_zh.md) |
+| Data request and layout | [data_processing/01_request_and_layout.md](data_processing/01_request_and_layout.md) | [data_processing/01_request_and_layout_zh.md](data_processing/01_request_and_layout_zh.md) |
+| Models | [models/README.md](models/README.md) | [models/README_zh.md](models/README_zh.md) |
+| License | [LICENSE](LICENSE) | [LICENSE_zh.md](LICENSE_zh.md) |
+
 ## Method Summary
 
 The scale-recovery core starts from dense pairwise geometry extracted by a

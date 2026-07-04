@@ -1,5 +1,7 @@
 # Data Request and Layout
 
+[中文版本](01_request_and_layout_zh.md)
+
 This repository does not redistribute images or labels.
 
 ## Required Sources

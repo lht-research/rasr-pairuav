@@ -1,5 +1,7 @@
 # Models
 
+[中文版本](README_zh.md)
+
 This directory contains the frozen checkpoints and fixed PairUAV output-head
 configuration used by the archived RASR submission.
 

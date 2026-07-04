@@ -1,5 +1,7 @@
 # Heading Provenance
 
+[中文版本](HEADING_PROVENANCE_zh.md)
+
 The exact frozen-artifact path consumes heading as one aligned CSV column named
 `heading_pred`. In the paper's notation this column is the frozen predictor
 `phi_i` used by the PairUAV benchmark-specific output head.

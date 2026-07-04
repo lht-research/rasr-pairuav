@@ -1,5 +1,7 @@
 # Archived PairUAV Submission Implementation
 
+[中文版本](METHOD_RELEASE_zh.md)
+
 This directory reproduces the archived PairUAV submission when used with the
 frozen intermediate artifacts listed in `frozen_artifacts_manifest.json`.
 
