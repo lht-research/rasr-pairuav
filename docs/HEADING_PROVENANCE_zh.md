@@ -2,7 +2,7 @@
 
 [English](HEADING_PROVENANCE.md)
 
-精确冻结 artifact 路径将 heading 作为一个对齐 CSV column 使用，列名为 `heading_pred`。在论文记号中，该列是 PairUAV benchmark-specific output head 使用的冻结 predictor `phi_i`。
+精确冻结 artifact 路径将 heading 作为一个对齐 CSV column 使用，列名为 `heading_pred`。在论文记号中，该列是 PairUAV benchmark submission adapter 使用的冻结 predictor `phi_i`。
 
 公开 from-scratch 路径会训练一个简单的逐行 heading baseline，用于透明端到端执行。该 baseline 不是归档线上分数使用的冻结 heading column。
 
@@ -26,7 +26,7 @@ heading_pred[row] = circular_weighted_average(head_a[row], head_b[row], ...)
 wrap_180(20 * round((1.014 * phi + 1.2) / 20))
 ```
 
-20 degree snap 是 PairUAV benchmark-specific output head 的一部分。它用于复现归档分数，不声明为可迁移的控制器 resolution。
+20 degree snap 是 PairUAV benchmark submission adapter 的一部分。它用于复现归档分数，不声明为可迁移的控制器 resolution。
 
 ## Manifest
 

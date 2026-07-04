@@ -2,7 +2,7 @@
 
 [English](README.md)
 
-本目录包含归档 RASR 提交使用的冻结 checkpoints 和固定 PairUAV output-head configuration。
+本目录包含归档 RASR 提交使用的冻结 checkpoints 和固定 PairUAV submission-adapter configuration。
 
 - `distance_head_a.pt` ... `distance_head_d.pt`：基于 422 维 pair descriptor 的四个冻结 distance candidates。
 - `lastmeter_config.json`：选择的 `gate=head0` range buckets、convex weights、bucket/sign/std-segment affine corrections 和 2.5 m distance snap。

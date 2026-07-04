@@ -9,7 +9,7 @@ per-pair function, matching the contract stated in the paper.
 
 Each official row is one ordered image pair. Distance heads consume only the
 feature vector for that row. The heading stage consumes one aligned prediction
-column for that row. All learned weights and output-head parameters are fixed
+column for that row. All learned weights and adapter parameters are fixed
 before official inference.
 
 ## Range-Aware Distance Combination
@@ -22,9 +22,10 @@ The scale-recovery stage uses only:
 
 For each row, the release config selects a bucket using the scale proxy
 `|h_1(z_i)|`, implemented as `gate=head0` in `models/lastmeter_config.json`, and
-returns the corresponding weighted sum. The PairUAV output head then applies
-fixed bucket/sign/std-segment parameters and the distance snap. It does not read
-any other hidden test row while making that decision.
+returns the corresponding weighted sum. The PairUAV submission adapter then
+applies fixed bucket/sign/std-segment parameters and the distance submission
+quantization. It does not read any other hidden test row while making that
+decision.
 
 ## Self-Pair Handling
 

@@ -2,7 +2,7 @@
 
 # RASR: Range-Aware Scale Recovery for PairUAV
 
-**Frozen pair geometry, range-aware scale recovery, and reproducible PairUAV submission artifacts.**
+**Frozen pair geometry, reusable scale recovery, and a separated PairUAV submission adapter.**
 
 [中文介绍](docs/README_zh.md) · [Reproduction](docs/REPRODUCTION.md) · [Method](docs/METHOD.md) · [Compliance](compliance/COMPLIANCE.md)
 
@@ -16,7 +16,7 @@
 </div>
 
 This repository contains the public implementation for **RASR
-(Range-Aware Scale Recovery)**, the frozen per-pair system described in
+(Range-Aware Scale Recovery)**, the inference-frozen per-pair system described in
 `Range-Aware Scale Recovery for Monocular Metric Grounding`.
 
 The paper frames PairUAV as monocular metric grounding for last-meter
@@ -28,11 +28,12 @@ metric scale under a relative-error objective.
 RASR keeps two components separate:
 
 - **Scale-recovery core:** frozen pair geometry, a metadata-free 422-D
-  descriptor, global and range-aware calibration, four frozen distance
-  candidates, and a row-local convex combination.
-- **PairUAV benchmark-specific output head:** range bucketing, output snapping,
-  and dataset-tuned constants used for the archived leaderboard submission.
-  This head is included for reproduction, but it is not claimed to transfer.
+  descriptor, global calibration, four calibration-fitted distance candidates,
+  and a row-local convex mixture with a disagreement statistic.
+- **PairUAV benchmark submission adapter:** range-bucket residual correction,
+  submission quantization, and dataset-tuned constants used for the archived
+  leaderboard submission. This adapter is included for reproduction, but it is
+  not claimed to transfer and should be discarded or retuned for deployment.
 
 Every official prediction is a function of one ordered image pair with all
 parameters fixed before inference. The released path does not use test-set graph
@@ -90,7 +91,8 @@ pixels and symmetric pair inference is run in both directions. Point maps,
 cross-view point maps, confidence maps, and descriptor maps are reduced to one
 metadata-free 422-D descriptor per pair.
 
-Four frozen distance heads produce candidates with complementary range behavior:
+Four calibration-fitted, inference-frozen distance heads produce candidates
+with complementary range behavior:
 
 - `distance_head_a`
 - `distance_head_b`
@@ -107,12 +109,14 @@ one of seven range buckets using calibration-side cut points:
 
 Within each bucket, the four candidates are combined by fixed convex weights fit
 with SLSQP under the distance relative-error objective. The standard deviation
-of the four candidates is retained as a disagreement statistic.
+of the four candidates is retained as a disagreement statistic. The routed
+mixture defines a candidate pool and disagreement signal; the benchmark-specific
+gain is realized by the separate submission adapter.
 
-The PairUAV benchmark-specific output head then applies fixed
-bucket/sign/std-segment affine corrections and a 2.5 m snap from
-`models/lastmeter_config.json`. Heading uses a frozen heading source followed by
-the paper's fixed transform:
+The PairUAV benchmark submission adapter then applies fixed
+bucket/sign/std-segment affine corrections and 2.5 m submission quantization
+from `models/lastmeter_config.json`. Heading uses a frozen heading source
+followed by the paper's fixed transform:
 
 ```text
 wrap_180(20 * round((1.014 * phi + 1.2) / 20))
@@ -248,7 +252,7 @@ row-aligned prediction CSVs.
 
 If you have a 422-dimensional pair feature cache compatible with the released
 checkpoints, the released-model script can recompute the four distance-head CSVs
-before applying the same PairUAV output head:
+before applying the same PairUAV submission adapter:
 
 ```bash
 bash scripts/reproduce_from_models.sh \
@@ -321,7 +325,7 @@ pairuav_lastmeter/
 
 ## Compliance
 
-Inference is per pair. The distance head and output-head stages process one
+Inference is per pair. The distance-head and adapter stages process one
 ordered image pair at a time using only that row's predictions and fixed
 train/calibration-derived parameters. See `compliance/COMPLIANCE.md` and
 `docs/HEADING_PROVENANCE.md`.

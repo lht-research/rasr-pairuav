@@ -2,8 +2,8 @@
 
 [中文版本](README_zh.md)
 
-This directory contains the frozen checkpoints and fixed PairUAV output-head
-configuration used by the archived RASR submission.
+This directory contains the frozen checkpoints and fixed PairUAV
+submission-adapter configuration used by the archived RASR submission.
 
 - `distance_head_a.pt` ... `distance_head_d.pt`: four frozen distance candidates
   over the 422-D pair descriptor.

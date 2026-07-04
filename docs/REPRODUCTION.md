@@ -5,7 +5,7 @@
 This release supports two reproducibility levels. The distinction matches the
 paper: RASR's scale-recovery core can be run from public code and official data,
 while the exact archived online score requires the frozen PairUAV
-benchmark-specific prediction artifacts.
+submission-adapter prediction artifacts.
 
 ## Path A: Public From-Scratch Pipeline
 

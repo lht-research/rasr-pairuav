@@ -4,7 +4,7 @@
 
 The exact frozen-artifact path consumes heading as one aligned CSV column named
 `heading_pred`. In the paper's notation this column is the frozen predictor
-`phi_i` used by the PairUAV benchmark-specific output head.
+`phi_i` used by the PairUAV benchmark submission adapter.
 
 The public from-scratch path trains a simple row-local heading baseline for
 transparent end-to-end execution. That baseline is not the frozen heading column
@@ -36,7 +36,7 @@ During exact reproduction, `heading_pred` is transformed row by row with
 wrap_180(20 * round((1.014 * phi + 1.2) / 20))
 ```
 
-The 20 degree snap is part of the PairUAV benchmark-specific output head. It is
+The 20 degree snap is part of the PairUAV benchmark submission adapter. It is
 included to reproduce the archived score, not claimed as a transferable
 controller resolution.
 

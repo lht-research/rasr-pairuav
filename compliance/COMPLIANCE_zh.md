@@ -6,7 +6,7 @@
 
 ## Per-Pair 推理
 
-每个正式行是一个有序图像对。Distance heads 只消耗该行的 feature vector。Heading stage 只消耗该行的一个对齐 prediction column。所有 learned weights 和 output-head parameters 都在正式推理前固定。
+每个正式行是一个有序图像对。Distance heads 只消耗该行的 feature vector。Heading stage 只消耗该行的一个对齐 prediction column。所有 learned weights 和 adapter parameters 都在正式推理前固定。
 
 ## 距离感知距离组合
 
@@ -16,7 +16,7 @@
 - 正式推理前学习好的固定 bucket boundaries；
 - 在 training/calibration data 上学习好的固定 convex bucket weights。
 
-对每一行，release config 使用尺度代理 `|h_1(z_i)|` 选择一个 bucket；它在 `models/lastmeter_config.json` 中实现为 `gate=head0`，并返回相应的加权和。PairUAV output head 随后应用固定 bucket/sign/std-segment parameters 和 distance snap。在做出这个决定时，它不会读取任何其他隐藏测试行。
+对每一行，release config 使用尺度代理 `|h_1(z_i)|` 选择一个 bucket；它在 `models/lastmeter_config.json` 中实现为 `gate=head0`，并返回相应的加权和。PairUAV submission adapter 随后应用固定 bucket/sign/std-segment parameters 和 distance submission quantization。在做出这个决定时，它不会读取任何其他隐藏测试行。
 
 ## Self-Pair 处理
 

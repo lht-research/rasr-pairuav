@@ -10,7 +10,7 @@ The implementation follows the paper's RASR decomposition:
 - scale-recovery core over frozen pair geometry;
 - four frozen distance candidates (`distance_head_a` ... `distance_head_d`);
 - range-aware convex combination using `gate=head0`;
-- PairUAV benchmark-specific distance output head;
+- PairUAV benchmark submission adapter for distance;
 - frozen heading column with the fixed heading transform;
 - row-local self-pair zeroing.
 
@@ -48,8 +48,9 @@ Bucket boundaries:
 ```
 
 For each row, the configured bucket selects convex weights over the four
-distance candidates. The PairUAV output head then selects bucket/sign/std-segment
-affine parameters from `models/lastmeter_config.json` and applies the 2.5 m snap.
+distance candidates. The PairUAV submission adapter then selects
+bucket/sign/std-segment affine parameters from `models/lastmeter_config.json`
+and applies the 2.5 m submission quantization.
 
 ## Heading Transform
 

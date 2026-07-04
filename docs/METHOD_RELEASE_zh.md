@@ -9,7 +9,7 @@
 - 冻结成对几何上的 scale-recovery core；
 - 四个冻结 distance candidates（`distance_head_a` ... `distance_head_d`）；
 - 使用 `gate=head0` 的 range-aware convex combination；
-- PairUAV benchmark-specific distance output head；
+- PairUAV benchmark submission adapter 的 distance 分支；
 - 冻结 heading column 与固定 heading transform；
 - 逐行 self-pair zeroing。
 
@@ -44,7 +44,7 @@ Bucket boundaries：
  77.38132781381124, 114.79]
 ```
 
-对每一行，配置的 bucket 会选择四个 distance candidates 上的凸权重。PairUAV output head 随后从 `models/lastmeter_config.json` 选择 bucket/sign/std-segment affine parameters，并应用 2.5 m snap。
+对每一行，配置的 bucket 会选择四个 distance candidates 上的凸权重。PairUAV submission adapter 随后从 `models/lastmeter_config.json` 选择 bucket/sign/std-segment affine parameters，并应用 2.5 m 提交量化。
 
 ## Heading Transform
 
