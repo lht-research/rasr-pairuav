@@ -17,6 +17,5 @@ data/
 *.tar
 *.tar.gz
 
-!models/README.md
 !models/*.json
 !models/*.pt

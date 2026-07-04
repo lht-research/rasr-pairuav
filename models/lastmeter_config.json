@@ -1,8 +1,8 @@
 {
-  "model_type": "rasr_pairuav_benchmark_output_head",
+  "model_type": "rasr_pairuav_benchmark_submission_adapter",
   "source_candidate": "gate_boundary_head0_bounds_0129",
   "trial_id": "dist_21f3d763f2811cd8",
-  "method_contract": "per-pair RASR scale-recovery core plus PairUAV benchmark-specific output head; no test-set graph optimization, hidden-neighbor revision, global assignment, clustering, or cross-sample bookkeeping",
+  "method_contract": "per-pair RASR scale-recovery core plus PairUAV submission adapter; no test-set graph optimization, hidden-neighbor revision, global assignment, clustering, or cross-sample bookkeeping",
   "head_names": [
     "distance_head_a",
     "distance_head_b",

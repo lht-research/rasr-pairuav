@@ -1,6 +1,6 @@
 {
   "model_type": "frozen_heading_column",
-  "description": "Exact RASR reproduction uses the archived frozen heading prediction column. The column is the phi_i source consumed by the PairUAV benchmark-specific output head.",
+  "description": "Exact RASR reproduction uses the archived frozen heading prediction column. The column is the phi_i source consumed by the PairUAV submission adapter.",
   "default_filename": "heading_predictions.csv",
   "column": "heading_pred",
   "rows": 2773116,
