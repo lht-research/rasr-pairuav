@@ -1,6 +1,6 @@
 <div align="center">
 
-# RASR: Range-Aware Scale Recovery for PairUAV
+# RASR: Range Aware Scale Recovery for PairUAV
 
 **Reproducible code and frozen artifacts for the UAVM 2026 PairUAV submission.**
 
@@ -14,11 +14,11 @@
 
 </div>
 
-This repository contains the public release for **RASR**, the inference-frozen
-per-pair system from:
+This repository contains the public release for **RASR**, the system fixed at
+inference for each image pair from:
 
 > Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fuhui Zhou,
-> and Qihui Wu. **Range-Aware Scale Recovery for Monocular Metric Grounding**.
+> and Qihui Wu. **Range Aware Scale Recovery for Monocular Metric Grounding**.
 > arXiv preprint, 2026. The arXiv identifier will be added after posting.
 
 Method details are intentionally not duplicated here. Please use the paper for
@@ -126,7 +126,7 @@ If you use this code or the released artifacts, please cite the paper:
 
 ```bibtex
 @misc{liang2026rasr,
-  title        = {Range-Aware Scale Recovery for Monocular Metric Grounding},
+  title        = {Range Aware Scale Recovery for Monocular Metric Grounding},
   author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Zhou, Fuhui and Wu, Qihui},
   year         = {2026},
   note         = {arXiv preprint, forthcoming},

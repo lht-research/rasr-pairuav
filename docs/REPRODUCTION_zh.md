@@ -3,7 +3,7 @@
 [English](REPRODUCTION.md)
 
 本页只保留运行发布版本所需的命令。方法细节请阅读论文
-**Range-Aware Scale Recovery for Monocular Metric Grounding**。
+**Range Aware Scale Recovery for Monocular Metric Grounding**。
 
 ## 数据
 

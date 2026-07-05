@@ -17,7 +17,7 @@
 本仓库是 **RASR** 的公开发布版本。RASR 是下列论文中的推理时冻结、逐图像对系统：
 
 > Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fuhui Zhou,
-> and Qihui Wu. **Range-Aware Scale Recovery for Monocular Metric Grounding**.
+> and Qihui Wu. **Range Aware Scale Recovery for Monocular Metric Grounding**.
 > arXiv preprint, 2026. arXiv 编号将在上传后补充。
 
 方法细节不在仓库文档中重复展开。算法说明请以论文为准；本仓库只保留运行、复现、验证和引用所需信息。
@@ -117,7 +117,7 @@ bash scripts/reproduce_from_models.sh \
 
 ```bibtex
 @misc{liang2026rasr,
-  title        = {Range-Aware Scale Recovery for Monocular Metric Grounding},
+  title        = {Range Aware Scale Recovery for Monocular Metric Grounding},
   author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Zhou, Fuhui and Wu, Qihui},
   year         = {2026},
   note         = {arXiv preprint, forthcoming},
