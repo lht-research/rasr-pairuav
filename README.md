@@ -45,7 +45,7 @@ Expected `submit.zip` SHA-256:
 
 - Public source code for data layout, feature extraction, training, inference,
   packaging, and verification.
-- Released model checkpoints and fixed submission configuration under `models/`.
+- Released model checkpoints and fixed protocol-specific calibration under `models/`.
 - A transparent from-scratch pipeline from official data.
 - An exact frozen-artifact pipeline for reproducing the archived submission.
 
@@ -78,8 +78,8 @@ bash scripts/reproduce_from_scratch.sh \
 
 Path B reproduces the archived submission exactly. Download the complete bundle:
 
-- Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
-- Extraction code: `t2c6`
+- Baidu Netdisk: https://pan.baidu.com/s/1_yCx9-8w6vvUesT1ES_onA
+- Extraction code: `yk7d`
 - Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
 - Bundle SHA-256:
 

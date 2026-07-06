@@ -2,8 +2,8 @@
 
 This entry point preserves the paper contract: each output is a per-pair
 function with fixed parameters. It consumes four distance candidates, applies
-the range-aware scale-recovery configuration and the PairUAV submission
-adapter, transforms the frozen heading column, and performs row-local
+the range-aware scale-recovery configuration and the protocol-specific
+calibration module, transforms the frozen heading column, and performs row-local
 self-pair zeroing.
 """
 

@@ -70,8 +70,8 @@ angle_rel_error      0.003350
 
 Download the complete bundle:
 
-- Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
-- Extraction code: `t2c6`
+- Baidu Netdisk: https://pan.baidu.com/s/1_yCx9-8w6vvUesT1ES_onA
+- Extraction code: `yk7d`
 - Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
 - Bundle SHA-256:
 

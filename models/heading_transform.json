@@ -19,6 +19,6 @@
   "est_online_final_with_current_distance": 0.003838902076137795,
   "rank": 1,
   "model_type": "rasr_pairuav_heading_output_transform",
-  "method_contract": "per-pair transform of the frozen heading_pred column in the PairUAV submission adapter",
+  "method_contract": "per-pair transform of the frozen heading_pred column in the protocol-specific calibration module",
   "expected_submit_zip_sha256": "2f742f2eff83e535b96a8dbd46db370fa3ac0538a9f3e53b684d65c253b34b77"
 }

@@ -41,7 +41,7 @@
 ## 仓库包含内容
 
 - 数据目录、特征提取、训练、推理、打包和验证的公开源码。
-- `models/` 中的发布 checkpoints 和固定提交配置。
+- `models/` 中的发布 checkpoints 和固定协议特定校准配置。
 - 从官方数据开始运行的透明 from-scratch 路径。
 - 复现归档提交的精确 frozen-artifact 路径。
 
@@ -72,8 +72,8 @@ bash scripts/reproduce_from_scratch.sh \
 
 Path B 精确复现归档提交。先下载完整 bundle：
 
-- 百度网盘：https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
-- 提取码：`t2c6`
+- 百度网盘：https://pan.baidu.com/s/1_yCx9-8w6vvUesT1ES_onA
+- 提取码：`yk7d`
 - Bundle 文件：`pairuav_lastmeter_complete_release_bundle.zip`
 - Bundle SHA-256：
 
