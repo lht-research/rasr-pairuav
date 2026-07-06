@@ -67,19 +67,19 @@ distance_rel_error   0.003029
 angle_rel_error      0.003350
 ```
 
-Download the complete bundle:
+Download the cloud archive:
 
-- Baidu Netdisk: https://pan.baidu.com/s/1_yCx9-8w6vvUesT1ES_onA (extraction code: `yk7d`)
+- Baidu Netdisk: https://pan.baidu.com/s/1S0-re-dET6ELinNfDkSPyA?pwd=6fgk (extraction code: `6fgk`)
 - Google Drive: https://drive.google.com/file/d/1T31XQwR4hr6naZ6zefX4EVLlMienXPBI/view?usp=sharing
-- Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
-- Bundle SHA-256:
+- Archive file: `rasr_pairuav_frozen_artifacts_v1.0.zip` (Baidu may display `rasr_pairuav_frozen_artifacts_v1.0.zip.zip`)
+- Archive SHA-256:
 
 ```text
 37f2111f5b19060281ce8b0942c655f3b18b2cc028c25f029029fd174f657019
 ```
 
-Unpack `pairuav_lastmeter_frozen_artifacts.zip` from the bundle. The artifact
-directory should contain:
+Unpack the frozen artifact zip from the archive. The artifact directory should
+contain:
 
 ```text
 distance_head_a.csv

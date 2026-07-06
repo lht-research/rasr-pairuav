@@ -63,18 +63,18 @@ distance_rel_error   0.003029
 angle_rel_error      0.003350
 ```
 
-下载完整 bundle：
+下载云盘 archive：
 
-- 百度网盘：https://pan.baidu.com/s/1_yCx9-8w6vvUesT1ES_onA（提取码：`yk7d`）
+- 百度网盘：https://pan.baidu.com/s/1S0-re-dET6ELinNfDkSPyA?pwd=6fgk（提取码：`6fgk`）
 - Google Drive：https://drive.google.com/file/d/1T31XQwR4hr6naZ6zefX4EVLlMienXPBI/view?usp=sharing
-- Bundle 文件：`pairuav_lastmeter_complete_release_bundle.zip`
-- Bundle SHA-256：
+- Archive 文件：`rasr_pairuav_frozen_artifacts_v1.0.zip`（百度网盘可能显示为 `rasr_pairuav_frozen_artifacts_v1.0.zip.zip`）
+- Archive SHA-256：
 
 ```text
 37f2111f5b19060281ce8b0942c655f3b18b2cc028c25f029029fd174f657019
 ```
 
-从 bundle 中解压 `pairuav_lastmeter_frozen_artifacts.zip`。artifact 目录应包含：
+从 archive 中解压 frozen artifact zip。artifact 目录应包含：
 
 ```text
 distance_head_a.csv
