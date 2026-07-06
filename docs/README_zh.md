@@ -75,7 +75,6 @@ Path B 精确复现归档提交。先下载完整 bundle：
 - 百度网盘：https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
 - 提取码：`t2c6`
 - Bundle 文件：`pairuav_lastmeter_complete_release_bundle.zip`
-- 说明：云盘 bundle 刻意不包含 Markdown 文档；所有说明都维护在本 GitHub 仓库中。
 - Bundle SHA-256：
 
 ```text

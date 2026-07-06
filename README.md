@@ -81,8 +81,6 @@ Path B reproduces the archived submission exactly. Download the complete bundle:
 - Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
 - Extraction code: `t2c6`
 - Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
-- Note: the cloud bundle intentionally contains no Markdown documentation;
-  all instructions are maintained in this GitHub repository.
 - Bundle SHA-256:
 
 ```text
