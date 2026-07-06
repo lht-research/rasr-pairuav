@@ -131,7 +131,7 @@ If you use this code or the released artifacts, please cite the paper:
   author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Zhou, Fuhui and Wu, Qihui},
   year         = {2026},
   note         = {arXiv preprint, forthcoming},
-  url          = {https://github.com/liang-hongtao/rasr-pairuav}
+  url          = {https://github.com/lht-research/rasr-pairuav}
 }
 ```
 

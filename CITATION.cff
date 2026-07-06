@@ -4,7 +4,7 @@ title: "RASR: Range Aware Scale Recovery for PairUAV"
 version: "1.0.0"
 date-released: "2026-07-05"
 license: "MIT"
-url: "https://github.com/liang-hongtao/rasr-pairuav"
+url: "https://github.com/lht-research/rasr-pairuav"
 authors:
   - family-names: "Liang"
     given-names: "Hongtao"
@@ -25,7 +25,7 @@ preferred-citation:
   title: "Range Aware Scale Recovery for Monocular Metric Grounding"
   year: 2026
   journal: "arXiv preprint, forthcoming"
-  url: "https://github.com/liang-hongtao/rasr-pairuav"
+  url: "https://github.com/lht-research/rasr-pairuav"
   authors:
     - family-names: "Liang"
       given-names: "Hongtao"
