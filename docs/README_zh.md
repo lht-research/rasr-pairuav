@@ -74,7 +74,7 @@ Path B 精确复现归档提交。先下载云盘 archive：
 
 - 百度网盘：https://pan.baidu.com/s/1S0-re-dET6ELinNfDkSPyA?pwd=6fgk（提取码：`6fgk`）
 - Google Drive：https://drive.google.com/file/d/1T31XQwR4hr6naZ6zefX4EVLlMienXPBI/view?usp=sharing
-- Archive 文件：`rasr_pairuav_frozen_artifacts_v1.0.zip`（百度网盘可能显示为 `rasr_pairuav_frozen_artifacts_v1.0.zip.zip`）
+- Archive 文件：`rasr_pairuav_frozen_artifacts_v1.0.zip`
 - Archive SHA-256：
 
 ```text

@@ -80,7 +80,7 @@ Path B reproduces the archived submission exactly. Download the cloud archive:
 
 - Baidu Netdisk: https://pan.baidu.com/s/1S0-re-dET6ELinNfDkSPyA?pwd=6fgk (extraction code: `6fgk`)
 - Google Drive: https://drive.google.com/file/d/1T31XQwR4hr6naZ6zefX4EVLlMienXPBI/view?usp=sharing
-- Archive file: `rasr_pairuav_frozen_artifacts_v1.0.zip` (Baidu may display `rasr_pairuav_frozen_artifacts_v1.0.zip.zip`)
+- Archive file: `rasr_pairuav_frozen_artifacts_v1.0.zip`
 - Archive SHA-256:
 
 ```text
