@@ -66,6 +66,7 @@ angle_rel_error      0.003350
 下载完整 bundle：
 
 - 百度网盘：https://pan.baidu.com/s/1_yCx9-8w6vvUesT1ES_onA
+- Google Drive：https://drive.google.com/file/d/1T31XQwR4hr6naZ6zefX4EVLlMienXPBI/view?usp=sharing
 - 提取码：`yk7d`
 - Bundle 文件：`pairuav_lastmeter_complete_release_bundle.zip`
 - Bundle SHA-256：
