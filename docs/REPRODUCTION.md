@@ -73,10 +73,12 @@ Download the complete bundle:
 - Baidu Netdisk: https://pan.baidu.com/s/1K1gDMw8mLJwAFC6jO-c9Fg
 - Extraction code: `t2c6`
 - Bundle file: `pairuav_lastmeter_complete_release_bundle.zip`
+- Note: the cloud bundle intentionally contains no Markdown documentation;
+  all instructions are maintained in this GitHub repository.
 - Bundle SHA-256:
 
 ```text
-4680537d47c93f6b953d20fde6e55b260e4603f02743b06f6ad6900ec0ef729f
+37f2111f5b19060281ce8b0942c655f3b18b2cc028c25f029029fd174f657019
 ```
 
 Unpack `pairuav_lastmeter_frozen_artifacts.zip` from the bundle. The artifact
