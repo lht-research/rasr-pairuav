@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this software or the released artifacts, please cite the paper. The arXiv identifier will be added after posting."
-title: "RASR: Range Aware Scale Recovery for PairUAV"
+title: "RASR: Range Aware Scale Recovery for Metric UAV Navigation"
 version: "1.0.0"
 date-released: "2026-07-05"
 license: "MIT"
@@ -22,7 +22,7 @@ authors:
     given-names: "Qihui"
 preferred-citation:
   type: article
-  title: "Range Aware Scale Recovery for Monocular Metric Grounding"
+  title: "RASR: Range Aware Scale Recovery for Metric UAV Navigation"
   year: 2026
   journal: "arXiv preprint, forthcoming"
   url: "https://github.com/lht-research/rasr-pairuav"
