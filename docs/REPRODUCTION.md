@@ -57,7 +57,8 @@ bash scripts/reproduce_from_scratch.sh \
 
 ## Path B: Exact Frozen-Artifact Reproduction
 
-Use this path to reproduce the archived PairUAV submission exactly.
+Use this path to reproduce the archived UAVs in Multimedia 2026 PairUAV online
+submission exactly.
 
 Expected online result:
 

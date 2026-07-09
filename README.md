@@ -2,7 +2,7 @@
 
 # RASR: Range-Aware Scale Recovery for Metric UAV Navigation
 
-**Reproducible code and frozen artifacts for the UAVM 2026 PairUAV submission.**
+**Reproducible code and frozen artifacts for the UAVs in Multimedia 2026 PairUAV online submission.**
 
 [中文介绍](docs/README_zh.md) · [Reproduction](docs/REPRODUCTION.md) · [Compliance](compliance/COMPLIANCE.md) · [Citation](#citation)
 
@@ -14,8 +14,8 @@
 
 </div>
 
-This repository contains the public release for **RASR**, the system fixed at
-inference for each image pair from:
+This repository contains the public release for **RASR**, the per-pair system
+fixed at inference from:
 
 > Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fuhui Zhou,
 > and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
@@ -27,7 +27,8 @@ release.
 
 ## Result
 
-The exact frozen-artifact path reproduces the archived PairUAV submission:
+The exact frozen-artifact path reproduces the archived UAVs in Multimedia 2026
+PairUAV online submission:
 
 | Metric | Value |
 | --- | ---: |

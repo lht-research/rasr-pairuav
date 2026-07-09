@@ -53,7 +53,7 @@ bash scripts/reproduce_from_scratch.sh \
 
 ## Path B：精确冻结 Artifact 复现
 
-这一路径用于精确复现归档 PairUAV 提交。
+这一路径用于精确复现归档 UAVs in Multimedia 2026 PairUAV 线上提交。
 
 预期线上结果：
 

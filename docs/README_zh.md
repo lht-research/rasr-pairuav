@@ -2,7 +2,7 @@
 
 # RASR：用于度量无人机导航的距离感知尺度恢复
 
-**UAVM 2026 PairUAV 提交的可复现代码和冻结 artifacts。**
+**UAVs in Multimedia 2026 PairUAV 线上提交的可复现代码和冻结 artifacts。**
 
 [English README](../README.md) · [复现说明](REPRODUCTION_zh.md) · [合规说明](../compliance/COMPLIANCE_zh.md) · [引用方式](#引用方式)
 
@@ -14,7 +14,7 @@
 
 </div>
 
-本仓库是 **RASR** 的公开发布版本。RASR 是下列论文中的推理时冻结、逐图像对系统：
+本仓库是 **RASR** 的公开发布版本。RASR 是下列论文中的逐图像对、推理时固定的系统：
 
 > Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fuhui Zhou,
 > and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
@@ -24,7 +24,7 @@
 
 ## 结果
 
-精确冻结 artifact 路径可以复现归档 PairUAV 提交：
+精确冻结 artifact 路径可以复现归档 UAVs in Multimedia 2026 PairUAV 线上提交：
 
 | Metric | Value |
 | --- | ---: |
