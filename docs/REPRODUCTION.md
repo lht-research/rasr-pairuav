@@ -3,7 +3,8 @@
 [中文版本](REPRODUCTION_zh.md)
 
 This page keeps only the commands needed to run the release. For method details,
-please read the paper: **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
+please read the paper: [**RASR: Range-Aware Scale Recovery for Metric UAV
+Navigation**](https://arxiv.org/abs/2607.09815).
 
 ## Data
 

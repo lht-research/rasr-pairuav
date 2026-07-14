@@ -9,6 +9,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 ![Task](https://img.shields.io/badge/Task-PairUAV-blue?style=flat-square)
+[![arXiv](https://img.shields.io/badge/arXiv-2607.09815-b31b1b?style=flat-square)](https://arxiv.org/abs/2607.09815)
 
 <img src="docs/assets/pipeline.png" alt="RASR pipeline overview" width="92%">
 
@@ -17,9 +18,9 @@
 This repository contains the public release for **RASR**, the per-pair system
 fixed at inference from:
 
-> Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fuhui Zhou,
-> and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
-> arXiv preprint, 2026. The arXiv identifier will be added after posting.
+> Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fangwei Ye,
+> Fuhui Zhou, and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
+> arXiv:2607.09815, 2026. https://arxiv.org/abs/2607.09815
 
 Method details are intentionally not duplicated here. Please use the paper for
 the algorithmic description and this repository for running and verifying the
@@ -128,10 +129,13 @@ If you use this code or the released artifacts, please cite the paper:
 ```bibtex
 @misc{liang2026rasr,
   title        = {RASR: Range-Aware Scale Recovery for Metric UAV Navigation},
-  author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Zhou, Fuhui and Wu, Qihui},
+  author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Ye, Fangwei and Zhou, Fuhui and Wu, Qihui},
   year         = {2026},
-  note         = {arXiv preprint, forthcoming},
-  url          = {https://github.com/lht-research/rasr-pairuav}
+  eprint       = {2607.09815},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV},
+  doi          = {10.48550/arXiv.2607.09815},
+  url          = {https://arxiv.org/abs/2607.09815}
 }
 ```
 

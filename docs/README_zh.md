@@ -9,6 +9,7 @@
 ![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=flat-square&logo=python&logoColor=white)
 ![License](https://img.shields.io/badge/License-MIT-green?style=flat-square)
 ![Task](https://img.shields.io/badge/Task-PairUAV-blue?style=flat-square)
+[![arXiv](https://img.shields.io/badge/arXiv-2607.09815-b31b1b?style=flat-square)](https://arxiv.org/abs/2607.09815)
 
 <img src="assets/pipeline.png" alt="RASR pipeline overview" width="92%">
 
@@ -16,9 +17,9 @@
 
 本仓库是 **RASR** 的公开发布版本。RASR 是下列论文中的逐图像对、推理时固定的系统：
 
-> Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fuhui Zhou,
-> and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
-> arXiv preprint, 2026. arXiv 编号将在上传后补充。
+> Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fangwei Ye,
+> Fuhui Zhou, and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
+> arXiv:2607.09815, 2026. https://arxiv.org/abs/2607.09815
 
 方法细节不在仓库文档中重复展开。算法说明请以论文为准；本仓库只保留运行、复现、验证和引用所需信息。
 
@@ -118,10 +119,13 @@ bash scripts/reproduce_from_models.sh \
 ```bibtex
 @misc{liang2026rasr,
   title        = {RASR: Range-Aware Scale Recovery for Metric UAV Navigation},
-  author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Zhou, Fuhui and Wu, Qihui},
+  author       = {Liang, Hongtao and Shao, Xinyu and Wang, Chenxu and Wan, Yiyao and Ji, Jiahuan and Ye, Fangwei and Zhou, Fuhui and Wu, Qihui},
   year         = {2026},
-  note         = {arXiv preprint, forthcoming},
-  url          = {https://github.com/lht-research/rasr-pairuav}
+  eprint       = {2607.09815},
+  archivePrefix = {arXiv},
+  primaryClass = {cs.CV},
+  doi          = {10.48550/arXiv.2607.09815},
+  url          = {https://arxiv.org/abs/2607.09815}
 }
 ```
 

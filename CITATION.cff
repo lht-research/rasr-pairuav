@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this software or the released artifacts, please cite the paper. The arXiv identifier will be added after posting."
+message: "If you use this software or the released artifacts, please cite the paper: arXiv:2607.09815."
 title: "RASR: Range-Aware Scale Recovery for Metric UAV Navigation"
 version: "1.0.0"
 date-released: "2026-07-05"
@@ -16,6 +16,8 @@ authors:
     given-names: "Yiyao"
   - family-names: "Ji"
     given-names: "Jiahuan"
+  - family-names: "Ye"
+    given-names: "Fangwei"
   - family-names: "Zhou"
     given-names: "Fuhui"
   - family-names: "Wu"
@@ -24,8 +26,9 @@ preferred-citation:
   type: article
   title: "RASR: Range-Aware Scale Recovery for Metric UAV Navigation"
   year: 2026
-  journal: "arXiv preprint, forthcoming"
-  url: "https://github.com/lht-research/rasr-pairuav"
+  journal: "arXiv preprint arXiv:2607.09815"
+  doi: "10.48550/arXiv.2607.09815"
+  url: "https://arxiv.org/abs/2607.09815"
   authors:
     - family-names: "Liang"
       given-names: "Hongtao"
@@ -37,6 +40,8 @@ preferred-citation:
       given-names: "Yiyao"
     - family-names: "Ji"
       given-names: "Jiahuan"
+    - family-names: "Ye"
+      given-names: "Fangwei"
     - family-names: "Zhou"
       given-names: "Fuhui"
     - family-names: "Wu"
