@@ -27,7 +27,7 @@
   "method_name": "RASR",
   "method_full_name": "Range-Aware Scale Recovery",
   "task": "PairUAV",
-  "reproducibility_contract": "Path A runs the public from-scratch pipeline from official data for transparent experimentation. Path B uses the frozen row-aligned prediction CSVs for bit-exact reproduction of the archived UAVs in Multimedia 2026 PairUAV online result.",
-  "public_from_scratch_note": "The public from-scratch path trains public distance heads and a simple row-local heading baseline. It is intended for transparent end-to-end reproduction and independent experimentation, not bit-exact reproduction of the archived online score.",
-  "compliance_note": "Official predictions are per-pair functions with parameters fixed before inference. The released path does not use test-set graph optimization, batch sorting, hidden-neighbor revision, retrieval over the hidden test set, global assignment, clustering, or cross-sample bookkeeping."
+  "reproducibility_contract": "Path A runs the public from-scratch pipeline from official data for transparent experimentation. Path B uses the frozen row-aligned prediction CSVs for bit-exact reproduction of the UAVs in Multimedia 2026 PairUAV official online evaluation result.",
+  "public_from_scratch_note": "The public from-scratch path trains public distance heads and a simple row-local heading baseline. It is intended for transparent end-to-end reproduction and independent experimentation, not bit-exact reproduction of the official online evaluation score.",
+  "compliance_note": "Official predictions are per-pair functions with parameters fixed before inference. The released path separates scale recovery from task-specific command calibration and does not use test-set graph optimization, batch sorting, hidden-neighbor revision, retrieval over the hidden test set, global assignment, clustering, or cross-sample bookkeeping."
 }

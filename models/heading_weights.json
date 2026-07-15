@@ -1,6 +1,6 @@
 {
   "model_type": "frozen_heading_column",
-  "description": "Exact RASR reproduction uses the archived frozen heading prediction column. The column is the phi_i source consumed by the protocol-specific calibration module.",
+  "description": "Exact RASR reproduction uses the frozen heading prediction column for the official online evaluation result. The column is the phi_i source consumed by the task-specific command calibration module.",
   "default_filename": "heading_predictions.csv",
   "column": "heading_pred",
   "rows": 2773116,

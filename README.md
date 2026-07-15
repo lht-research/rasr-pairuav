@@ -2,7 +2,7 @@
 
 # RASR: Range-Aware Scale Recovery for Metric UAV Navigation
 
-**Reproducible code and frozen artifacts for the UAVs in Multimedia 2026 PairUAV online submission.**
+**Reproducible code and frozen artifacts for the RASR result on the UAVs in Multimedia 2026 PairUAV official online evaluation.**
 
 [中文介绍](docs/README_zh.md) · [Reproduction](docs/REPRODUCTION.md) · [Compliance](compliance/COMPLIANCE.md) · [Citation](#citation)
 
@@ -15,21 +15,22 @@
 
 </div>
 
-This repository contains the public release for **RASR**, the per-pair system
-fixed at inference from:
+This repository contains the public release for **RASR**, a per-pair system for
+metric distance and heading estimation in image-goal UAV navigation:
 
 > Hongtao Liang, Xinyu Shao, Chenxu Wang, Yiyao Wan, Jiahuan Ji, Fangwei Ye,
 > Fuhui Zhou, and Qihui Wu. **RASR: Range-Aware Scale Recovery for Metric UAV Navigation**.
 > arXiv:2607.09815, 2026. https://arxiv.org/abs/2607.09815
 
-Method details are intentionally not duplicated here. Please use the paper for
+RASR complements global scale calibration with range-aware residual correction.
+Method details are intentionally not duplicated here; please use the paper for
 the algorithmic description and this repository for running and verifying the
 release.
 
 ## Result
 
-The exact frozen-artifact path reproduces the archived UAVs in Multimedia 2026
-PairUAV online submission:
+The exact frozen-artifact path reproduces the UAVs in Multimedia 2026 PairUAV
+official online evaluation result:
 
 | Metric | Value |
 | --- | ---: |
@@ -47,9 +48,9 @@ Expected `submit.zip` SHA-256:
 
 - Public source code for data layout, feature extraction, training, inference,
   packaging, and verification.
-- Released model checkpoints and fixed protocol-specific calibration under `models/`.
+- Released model checkpoints and fixed task-specific command calibration under `models/`.
 - A transparent from-scratch pipeline from official data.
-- An exact frozen-artifact pipeline for reproducing the archived submission.
+- An exact frozen-artifact pipeline for reproducing the official online evaluation result.
 
 This repository does **not** include dataset images, private labels, or the
 large frozen CSV artifacts. Download the official datasets from their original
@@ -78,7 +79,7 @@ bash scripts/reproduce_from_scratch.sh \
   --max-steps 50
 ```
 
-Path B reproduces the archived submission exactly. Download the cloud archive:
+Path B reproduces the official online evaluation result exactly. Download the cloud archive:
 
 - Baidu Netdisk: https://pan.baidu.com/s/1S0-re-dET6ELinNfDkSPyA?pwd=6fgk (extraction code: `6fgk`)
 - Google Drive: https://drive.google.com/file/d/1T31XQwR4hr6naZ6zefX4EVLlMienXPBI/view?usp=sharing

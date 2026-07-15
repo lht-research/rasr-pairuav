@@ -215,7 +215,7 @@ Output:
 
 This path is an end-to-end public RASR pipeline. It is intended for transparent
 method reproduction and independent experimentation, not bit-exact reproduction
-of the archived online submission.
+of the official online evaluation result.
 For exact reproduction, use the frozen artifact package and
 scripts/reproduce_from_models.sh.
 EOF

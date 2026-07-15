@@ -33,7 +33,7 @@ bash scripts/smoke_test.sh
 
 This path runs the public code from official data. It is intended for
 transparent execution and experimentation, not bit-exact reproduction of the
-archived online score.
+official online evaluation score.
 
 ```bash
 bash scripts/reproduce_from_scratch.sh \
@@ -58,10 +58,10 @@ bash scripts/reproduce_from_scratch.sh \
 
 ## Path B: Exact Frozen-Artifact Reproduction
 
-Use this path to reproduce the archived UAVs in Multimedia 2026 PairUAV online
-submission exactly.
+Use this path to reproduce the UAVs in Multimedia 2026 PairUAV official online
+evaluation result exactly.
 
-Expected online result:
+Expected official online evaluation result:
 
 ```text
 final_score          0.003189

@@ -3,7 +3,7 @@
 This baseline is intentionally simple and fully reproducible. It predicts
 heading by fitting two ridge-regression heads for sin(theta) and cos(theta) from
 the same pair-feature table used by the distance heads. It is provided for the
-from-scratch public path; the archived online submission uses the frozen
+from-scratch public path; the official online evaluation result uses the frozen
 ``heading_predictions.csv`` artifact listed in ``frozen_artifacts_manifest.json``.
 """
 

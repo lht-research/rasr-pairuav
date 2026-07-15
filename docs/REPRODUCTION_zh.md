@@ -28,7 +28,7 @@ bash scripts/smoke_test.sh
 
 ## Path A：公开从头复现路径
 
-这一路径从官方数据运行公开代码，用于透明执行和独立实验；不用于逐 bit 复现归档线上分数。
+这一路径从官方数据运行公开代码，用于透明执行和独立实验；不用于逐 bit 复现官方线上评测分数。
 
 ```bash
 bash scripts/reproduce_from_scratch.sh \
@@ -53,9 +53,9 @@ bash scripts/reproduce_from_scratch.sh \
 
 ## Path B：精确冻结 Artifact 复现
 
-这一路径用于精确复现归档 UAVs in Multimedia 2026 PairUAV 线上提交。
+这一路径用于精确复现 UAVs in Multimedia 2026 PairUAV 官方线上评测结果。
 
-预期线上结果：
+预期官方线上评测结果：
 
 ```text
 final_score          0.003189
